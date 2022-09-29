@@ -1,3 +1,9 @@
+def check(n):
+    for i in range(2, n):
+        if n%i == 0:
+            return False
+    return True
+
 def solution(nums):
     answer = 0
     temp = []
@@ -6,13 +12,9 @@ def solution(nums):
             for l in range(j+1, len(nums)):
                 n = nums[i] + nums[j] + nums[l]
                 if n not in temp:
-                    temp.append(n)
-    print(temp)
-    for i in temp:
-        for j in range(2, i):
-            if i % j != 0:
-                answer += 1
-                break
+                    if check(n):
+                        temp.append(n)
+    answer = len(temp)
     return answer
 
 print(solution([1,2,3,4]))
