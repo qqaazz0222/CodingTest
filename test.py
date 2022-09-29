@@ -1,9 +1,9 @@
+n = 78
 answer = 0
-num = 6
+count = str(bin(n))[2:].count('1')
 while True:
-    print(answer, num)
-    if answer < 500:
-        if num % 2 == 0:
-            num = num / 2
-        else:
-            num = num / 3 + 1
+    n += 1
+    if count == str(bin(n))[2:].count('1'):
+        answer = n
+        break
+print(answer)
