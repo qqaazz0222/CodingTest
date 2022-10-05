@@ -1,25 +1,26 @@
 def solution(n, words):
     answer = []
     round = 0
-    errround = 0
-    temp = words[0][0]
-    print(temp)
+    last = words[0][0]
     used = []
-    for i in words:
-        print(round, errround, used)
-        if temp[-1] == i[0]:
-            if i in used:
-                errround = round
+    while True:
+        # print(round, words[round])
+        if last != words[round][0]:
+            # print("end")
+            break
+        else:
+            # print(used)
+            if words[round] in used:
+                # print("end")
                 break
             else:
-                round += 1
-                used.append(i)
-        else:
-            errround = round
-            break
-    answer = [errround%n, errround//n]
-
-
+                used.append(words[round])
+                last = words[round][-1]
+        round += 1
+    if round == len(words):
+        answer = [0,0]
+    else:
+        answer = [round%3+1,round//3+1]
     return answer
 
 print(solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]))
