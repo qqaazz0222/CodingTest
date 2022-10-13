@@ -1,9 +1,11 @@
-def solution(str1, str2):
-    answer = 2
-    print(str1.find(str2))
-    if str1.find(str2) == 0:
-        answer = 1
-    return answer
+def solution(s):
+    answer = ''
+    number = ['one', 'two', 'three', 'four',
+              'five', 'six', 'seven', 'eight', 'nine']
 
-print(solution("ab6CDE443fgh22iJKlmn1o", "6CD"))
-print(solution("ppprrrogrammers", "pppp"))
+    for i in number:
+        if i in s:
+            print(number.index(i)+1)
+
+
+print(solution("one4seveneight"))
