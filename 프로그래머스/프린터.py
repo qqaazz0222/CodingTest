@@ -8,7 +8,7 @@ def solution(priorities, location):
         else:
             temp = priorities[0]
             if temp < max(priorities):
-                priorities.append(temp)
+               ㅌㅋ ㅋㅌpriorities.append(temp)
             else:
                 result.append(temp)
             del priorities[0]
