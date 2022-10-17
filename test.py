@@ -1,11 +1,18 @@
-def solution(s):
-    answer = ''
-    number = ['one', 'two', 'three', 'four',
-              'five', 'six', 'seven', 'eight', 'nine']
+def solution(num_list, n):
+    answer = []
+    nn = 0
+    temp = []
+    for i in range(num_list):
+        if i == 0:
+            temp.append(num_list(i))
+        else:
+            if i % n == 0:
+                temp.append(num_list(i))
+                answer.append(temp)
+                temp = []
+            else:
+                temp.append(num_list(i))
+    return answer
 
-    for i in number:
-        if i in s:
-            print(number.index(i)+1)
 
-
-print(solution("one4seveneight"))
+print(solution([1, 2, 3, 4, 5, 6, 7, 8]))
