@@ -1,23 +1,15 @@
 def solution(s):
     answer = 0
-    while True:
-        if len(s) <= 2:
-            break
-        else:
-            temp = ''
-            for i in s:
-                if temp == i:
-                    s = s.replace(i*2, '')
-                else:
-                    temp = i
-    temp = s[0]
+    stack = ['0']
     for i in s:
-        if temp == i:
-            answer = 1
+        if stack[-1] == i:
+            del stack[-1]
         else:
-            answer = 0
-            break
+            stack.append(i)
+    if stack == ['0']:
+        answer = 1
     return answer
 
-# print(solution("baabaa"))
+
+print(solution("baabaa"))
 print(solution("cdcd"))
