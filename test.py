@@ -1,3 +1,7 @@
-import itertools
-ll = [0]*10
-print(ll)
+temp = []
+i = 1
+print(temp)
+temp.append(i)
+print(temp)
+temp += [i]
+print(temp)

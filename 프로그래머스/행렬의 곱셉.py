@@ -1,14 +1,8 @@
 def solution(arr1, arr2):
-    answer = []
-    r1 = len(arr1[0])
-    r2 = len(arr2[0])
-    c1 = len(arr1[0][0])
-    c2 = len(arr2[0][0])
-    for i in range(r1):
-        temp = []
-        for j in range(n):
-            i[]
-
+    answer = []+arr1
+    for i in len(answer):
+        for j in len(answer[i]):
+            answer[i][j] = arr1[i][j] +
     return answer
 
 
