@@ -1,7 +1,4 @@
-temp = []
-i = 1
+temp = [1, 4, 2]
 print(temp)
-temp.append(i)
-print(temp)
-temp += [i]
+temp.sort(reverse=True)
 print(temp)
