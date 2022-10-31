@@ -22,5 +22,5 @@ def solution(babbling):
     return answer
 
 
-print(solution(["aya", "yee", "u", "maa"]))
+print(solution(["aya", "yeyewoowoomama", "u", "maa"]))
 print(solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
