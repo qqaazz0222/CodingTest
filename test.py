@@ -1,2 +1,2 @@
-a = "ayaye"
-print("aya" in a)
+ham = "00123412341234"
+print(ham.index("1234"))
