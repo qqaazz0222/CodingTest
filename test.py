@@ -1,6 +1,2 @@
-total = 0
-for i in range(101):
-    if i % 4 == 0:
-        print(total, "+", i, "=")
-        total += i
-        print(total)
+a = [1, 2, 3, 4, 5]
+print(a[1:3])
