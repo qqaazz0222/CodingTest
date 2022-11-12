@@ -1,22 +1,19 @@
-def solution(id_list, report):
-    temp_id = []
-    temp = []
-    for i in report:
-        user = i.split(' ')
-        if user[1] not in temp_id:
-            temp_id.append(user[1])
-        idx = temp_id.index(user[1])
-        if user[0] not in temp[idx]:
-            temp[idx].append(user[0])
-        else:
-            temp[idx].append(user[0])
-    result = []
-    for i in temp:
-        result.append(len(i))
-    return result
+import collections
 
 
-print(solution(["muzi", "frodo", "apeach", "neo"], [
-      "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"]))
-print(solution(["con", "ryan"], ["ryan con",
-      "ryan con", "ryan con", "ryan con"]))
+def solution(id_list, report, k):
+    answer = []
+    report = list(set(report))
+    reportHash = collections.defaultdict(set)
+    stoped = collections.defaultdict(int)
+    for x in report:
+        a, b = x.split(' ')
+        reportHash[a].add(b)
+        stoped[b] += 1
+    for name in id_list:
+        mail = 0
+        for user in reportHash[name]:
+            if stoped[user] >= k:
+                mail += 1
+        answer.append(mail)
+    return answer
