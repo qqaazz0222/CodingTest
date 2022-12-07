@@ -1,25 +1,24 @@
-from collections import deque
-
-
 def solution(priorities, location):
-    answer = 0
-    print_stack = deque(priorities)
-    job_stack = deque(x for x in range(len(priorities)))
-    priority = print_stack.popleft()
-    job = job_stack.popleft()
-    while print_stack:
-        if job < max(print_stack):
-            print_stack.append(priority)
-            job_stack.append(job)
-        else:
-            answer += 1
-            if (job == location):
-                return answer
-        priority = print_stack.popleft()
-        job = job_stack.popleft()
+    answer = 1
+    pS = []
+    l = len(priorities)
+    for i in range(len(priorities)):
+        pS.append([priorities[i], i])
+    while answer < l-1:
+        print(priorities, pS)
+        print(answer)
+        if len(priorities) > 1:
+            if priorities[0] >= max(priorities[1:]):
+                if pS[0][1] == location:
+                    return answer
+                priorities = priorities[1:]
+                pS = pS[1:]
+                answer += 1
+            else:
+                priorities = priorities[1:] + [priorities[0]]
+                pS = pS[1:] + [pS[0]]
     return answer
 
 
 print(solution([2, 1, 3, 2], 2))
-print("--------------------------------")
 print(solution([1, 1, 9, 1, 1, 1], 0))
